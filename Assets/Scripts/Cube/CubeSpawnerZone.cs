@@ -4,7 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class CubeSpawnerZone : MonoBehaviour
 {
-    [SerializeField] private CubeCreator _cubeCreator;
     [SerializeField] private CubeSpawner _cubeSpawner;
 
     [SerializeField] private bool _hasSpawnStopped;
@@ -15,11 +14,6 @@ public class CubeSpawnerZone : MonoBehaviour
 
     private void Awake()
     {
-        if (_cubeCreator == null)
-        {
-            throw new UnityException("Нет ссылки на создателя кубов для создания кубов");
-        }
-
         if (_cubeSpawner == null)
         {
             throw new UnityException("Нет ссылки на создателя кубов для спавна кубов");
@@ -60,7 +54,6 @@ public class CubeSpawnerZone : MonoBehaviour
 
         Vector3 position = new Vector3(x, zoneBounds.min.y, z);
 
-        Cube cube = _cubeCreator.Create();
-        _cubeSpawner.Spawn(cube, position);
+        _cubeSpawner.Spawn(position);
     }
 }

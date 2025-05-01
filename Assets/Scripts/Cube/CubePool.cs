@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class CubeContainer : MonoBehaviour
+public class CubePool : MonoBehaviour
 {
     [SerializeField] private Cube _cubePrefab;
     [SerializeField] private int _defaultCapacity = 20;

@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    [SerializeField] private CubeDestroyer _cubeDestroyer;
+    [SerializeField] private CubeSpawner _cubeSpawner;
 
     private void Awake()
     {
-        if (_cubeDestroyer == null)
+        if (_cubeSpawner == null)
         {
             throw new UnityException("Нет ссылки на уничтожителя кубов для уничтожения кубов");
         }
@@ -19,7 +19,6 @@ public class Platform : MonoBehaviour
             if (cube.HasCollidedWithPlatform == false)
             {
                 cube.Touch();
-                _cubeDestroyer.Destroy(cube);
             }
         }
     }

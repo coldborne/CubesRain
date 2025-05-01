@@ -29,7 +29,8 @@ Transform:
   m_LocalPosition: {x: -1.0195934, y: -5.403656, z: -1.4087918}
   m_LocalScale: {x: 0.1, y: 1, z: 0.1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5744796896494661789}
   m_Father: {fileID: 2571739646230361802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9165834773569136057
@@ -44,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b18fe70ec580d24c8d9a6e324b018c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cubes: {fileID: 6352706194871896691}
 --- !u!1 &2187216333840076854
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,11 +72,11 @@ Transform:
   m_GameObject: {fileID: 2187216333840076854}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10.195933, y: -7.096344, z: 14.087917}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8236492047228951426}
+  m_Father: {fileID: 7425001108559323151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6352706194871896691
 MonoBehaviour:
@@ -124,9 +126,7 @@ Transform:
   - {fileID: 8999890732415552613}
   - {fileID: 5602524198003830198}
   - {fileID: 1131542221552328517}
-  - {fileID: 5714097435502802728}
   - {fileID: 2571739646230361802}
-  - {fileID: 5744796896494661789}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3329489442642075229
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19d269eb1903cf4b928a565f441dd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeDestroyer: {fileID: 8262296649975643010}
+  _cubeSpawner: {fileID: 9165834773569136057}
 --- !u!1 &3881917430103379062
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19d269eb1903cf4b928a565f441dd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeDestroyer: {fileID: 8262296649975643010}
+  _cubeSpawner: {fileID: 9165834773569136057}
 --- !u!1 &4125203485001985678
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +401,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7425001108559323151}
-  - {fileID: 6928986645381528117}
   m_Father: {fileID: 8236492047228951426}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6951027766881458995
@@ -437,7 +436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b239d25b08c1963439d7f32a75b85170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeCreator: {fileID: 5519031031901135099}
   _cubeSpawner: {fileID: 9165834773569136057}
   _hasSpawnStopped: 0
 --- !u!1 &4183712798041059510
@@ -559,97 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19d269eb1903cf4b928a565f441dd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeDestroyer: {fileID: 8262296649975643010}
---- !u!1 &4936358322409961530
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6928986645381528117}
-  - component: {fileID: 5519031031901135099}
-  m_Layer: 0
-  m_Name: Creator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6928986645381528117
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4936358322409961530}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0195934, y: -5.403656, z: -1.4087918}
-  m_LocalScale: {x: 0.1, y: 1, z: 0.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2571739646230361802}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5519031031901135099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4936358322409961530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67a0f0df654ab9248b5d6d6c0407105c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cubeContainer: {fileID: 6352706194871896691}
---- !u!1 &8982486875568027021
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5714097435502802728}
-  - component: {fileID: 8262296649975643010}
-  m_Layer: 0
-  m_Name: Cube Destroyer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5714097435502802728
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8982486875568027021}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8236492047228951426}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8262296649975643010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8982486875568027021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a3868307e1f33b4ebcc9344d48eccf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cubeContainer: {fileID: 6352706194871896691}
+  _cubeSpawner: {fileID: 9165834773569136057}
 --- !u!1 &9177742495635587499
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,4 +677,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19d269eb1903cf4b928a565f441dd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeDestroyer: {fileID: 8262296649975643010}
+  _cubeSpawner: {fileID: 9165834773569136057}
