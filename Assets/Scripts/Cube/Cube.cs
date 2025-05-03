@@ -17,6 +17,23 @@ public class Cube : MonoBehaviour
     
     public bool HasCollidedWithPlatform { get; private set; }
 
+    private void Awake()
+    {
+        _renderer = GetComponent<Renderer>();
+        _renderer.material.color = _defaultColor;
+    }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.TryGetComponent<Platform>(out _))
+        {
+            if (HasCollidedWithPlatform == false)
+            {
+                Touch();
+            }
+        }
+    }
+    
     public void Touch()
     {
         if (HasCollidedWithPlatform == false)
@@ -27,7 +44,7 @@ public class Cube : MonoBehaviour
             int minLifeTime = 2;
             int maxLifeTime = 5;
             
-            int cubeLifeTime = Random.Range(minLifeTime, maxLifeTime);
+            int cubeLifeTime = Random.Range(minLifeTime, maxLifeTime + 1);
             StartCoroutine(ExpireAfterDelay(cubeLifeTime));
         }
     }
@@ -41,12 +58,6 @@ public class Cube : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        _renderer = GetComponent<Renderer>();
-        _renderer.material.color = _defaultColor;
-    }
-    
     private IEnumerator ExpireAfterDelay(int delay)
     {
         yield return new WaitForSeconds(delay);
