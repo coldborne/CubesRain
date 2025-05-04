@@ -27,6 +27,17 @@ public class CubePool : MonoBehaviour
             maxSize: _maxSize
         );
     }
+    
+    public Cube GetCube()
+    {
+        return _pool.Get();
+    }
+
+    public void ReleaseCube(Cube cube)
+    {
+        cube.UnTouch();
+        _pool.Release(cube);
+    }
 
     private Cube CreateCube()
     {
@@ -48,16 +59,5 @@ public class CubePool : MonoBehaviour
     private void OnDestroyCube(Cube cube)
     {
         Destroy(cube.gameObject);
-    }
-
-    public Cube GetCube()
-    {
-        return _pool.Get();
-    }
-
-    public void ReleaseCube(Cube cube)
-    {
-        cube.UnTouch();
-        _pool.Release(cube);
     }
 }
