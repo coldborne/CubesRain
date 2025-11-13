@@ -1,7 +1,7 @@
-using SpawnerZones;
+using Cubes;
 using UnityEngine;
 
-namespace Cubes
+namespace SpawnerZones
 {
     [RequireComponent(typeof(BoxCollider))]
     public class CubeSpawnerZone : SpawnerZone<Cube>

@@ -1,11 +1,11 @@
 ﻿using System.Collections;
-using Pools;
+using interfaces;
 using Spawners;
 using UnityEngine;
 
 namespace SpawnerZones
 {
-    public abstract class SpawnerZone<T> : MonoBehaviour where T : TouchableObject<T>
+    public abstract class SpawnerZone<T> : MonoBehaviour where T : MonoBehaviour, IExpirable<T>
     {
         [SerializeField] private Spawner<T> _spawner;
 

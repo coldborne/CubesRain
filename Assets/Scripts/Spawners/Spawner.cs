@@ -1,9 +1,10 @@
-﻿using Pools;
+﻿using interfaces;
+using Pools;
 using UnityEngine;
 
 namespace Spawners
 {
-    public class Spawner<T> : MonoBehaviour where T : TouchableObject<T>
+    public abstract class Spawner<T> : MonoBehaviour where T : MonoBehaviour, IExpirable<T>
     {
         [SerializeField] private ItemPool<T> _items;
 
@@ -25,7 +26,7 @@ namespace Spawners
             item.Expired += Release;
         }
 
-        private void Release(T item)
+        protected virtual void Release(T item)
         {
             item.Expired -= Release;
             _items.Release(item);

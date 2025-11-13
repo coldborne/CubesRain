@@ -4,7 +4,7 @@ using UnityEngine.Pool;
 
 namespace Pools
 {
-    public class ItemPool<T> : MonoBehaviour where T : TouchableObject<T>
+    public class ItemPool<T> : MonoBehaviour where T : MonoBehaviour
     {
         [SerializeField] private T _prefab;
         [SerializeField] private int _defaultCapacity = 20;
@@ -35,9 +35,8 @@ namespace Pools
             return _pool.Get();
         }
 
-        public void Release(T item)
+        public virtual void Release(T item)
         {
-            item.UnTouch();
             _pool.Release(item);
         }
 

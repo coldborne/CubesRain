@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using interfaces;
 using Platforms;
 using Pools;
 using UnityEngine;
@@ -10,10 +11,12 @@ namespace Cubes
     [RequireComponent(typeof(Collider))]
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Renderer))]
-    public class Cube : TouchableObject<Cube>
+    public class Cube : TouchableObject, IExpirable<Cube>
     {
         [SerializeField] private Color[] _colors;
         [SerializeField] private Color _defaultColor;
+
+        public event Action<Cube> Expired;
 
         private Renderer _renderer;
 
@@ -65,6 +68,11 @@ namespace Cubes
             yield return new WaitForSeconds(delay);
 
             Expire();
+        }
+
+        public void Expire()
+        {
+            Expired?.Invoke(this);
         }
     }
 }
