@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b18fe70ec580d24c8d9a6e324b018c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubes: {fileID: 6352706194871896691}
+  _items: {fileID: 6352706194871896691}
 --- !u!1 &2187216333840076854
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017f91cb6bda7a840b39183a0e82f3b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubePrefab: {fileID: 2237423075933314858, guid: ab009284bcb1de2488b74a82bc08bbfd, type: 3}
+  _prefab: {fileID: 2237423075933314858, guid: ab009284bcb1de2488b74a82bc08bbfd, type: 3}
   _defaultCapacity: 20
   _maxSize: 100
 --- !u!1 &2705476740522802774
@@ -248,7 +248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19d269eb1903cf4b928a565f441dd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeSpawner: {fileID: 9165834773569136057}
 --- !u!1 &3881917430103379062
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19d269eb1903cf4b928a565f441dd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeSpawner: {fileID: 9165834773569136057}
 --- !u!1 &4125203485001985678
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b239d25b08c1963439d7f32a75b85170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeSpawner: {fileID: 9165834773569136057}
+  _spawner: {fileID: 9165834773569136057}
   _hasSpawnStopped: 0
 --- !u!1 &4183712798041059510
 GameObject:
@@ -557,7 +555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19d269eb1903cf4b928a565f441dd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeSpawner: {fileID: 9165834773569136057}
 --- !u!1 &9177742495635587499
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,4 +674,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19d269eb1903cf4b928a565f441dd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cubeSpawner: {fileID: 9165834773569136057}

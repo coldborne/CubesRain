@@ -224,6 +224,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1570285921537607216, guid: cd2654f4c17b50f4c86ac6289f7c1fc0, type: 3}
+      propertyPath: m_Name
+      value: Cube Spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 2187216333840076854, guid: cd2654f4c17b50f4c86ac6289f7c1fc0, type: 3}
       propertyPath: m_Name
       value: Cube Pool
