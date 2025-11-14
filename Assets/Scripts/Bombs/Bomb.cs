@@ -28,11 +28,11 @@ namespace Bombs
             _defaultColor = Color.black;
 
             _renderer = GetComponent<Renderer>();
-            _renderer.material.color = _defaultColor;
         }
 
         private void OnEnable()
         {
+            _renderer.material.color = _defaultColor;
             Activate();
         }
 
