@@ -10,6 +10,14 @@ namespace Pools
         [SerializeField] private int _defaultCapacity = 20;
         [SerializeField] private int _maxSize = 100;
 
+        public event Action<int> TotalCreatedObjectCountChanged;
+        public event Action<int> TotalSpawnedObjectCountChanged;
+        public event Action<int> TotalActiveObjectCountChanged;
+
+        private int _totalCreatedObjectCount;
+        private int _totalSpawnedObjectCount;
+        private int _totalActiveObjectCount;
+
         private ObjectPool<T> _pool;
 
         private void Awake()
@@ -44,17 +52,30 @@ namespace Pools
         {
             T item = Instantiate(_prefab, transform);
             item.gameObject.SetActive(false);
+
+            _totalCreatedObjectCount++;
+            TotalCreatedObjectCountChanged?.Invoke(_totalCreatedObjectCount);
+            
             return item;
         }
 
         private void GetItem(T item)
         {
             item.gameObject.SetActive(true);
+
+            _totalSpawnedObjectCount++;
+            _totalActiveObjectCount++;
+            
+            TotalSpawnedObjectCountChanged?.Invoke(_totalSpawnedObjectCount);
+            TotalActiveObjectCountChanged?.Invoke(_totalActiveObjectCount);
         }
 
         private void ReleaseItem(T item)
         {
             item.gameObject.SetActive(false);
+            
+            _totalActiveObjectCount--;
+            TotalActiveObjectCountChanged?.Invoke(_totalActiveObjectCount);
         }
 
         private void DestroyItem(T item)
