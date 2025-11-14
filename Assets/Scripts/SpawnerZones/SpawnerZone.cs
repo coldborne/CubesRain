@@ -11,6 +11,7 @@ namespace SpawnerZones
 
         [SerializeField] private bool _hasSpawnStopped;
 
+        private WaitForSeconds _waitForSeconds;
         private int _delay;
 
         private void Awake()
@@ -21,6 +22,7 @@ namespace SpawnerZones
             }
 
             _delay = 1;
+            _waitForSeconds = new WaitForSeconds(_delay);
 
             Init();
         }
@@ -38,7 +40,7 @@ namespace SpawnerZones
             {
                 Spawn();
 
-                yield return new WaitForSeconds(_delay);
+                yield return _waitForSeconds;
             }
         }
 
